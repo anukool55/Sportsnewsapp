@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "544748199151",
+    "firebase_url": "https://news-21d60.firebaseio.com",
+    "project_id": "news-21d60",
+    "storage_bucket": "news-21d60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:544748199151:android:fafe342e0079441c",
+        "android_client_info": {
+          "package_name": "com.example.anukool.newsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "544748199151-ttf9haqch3udg20v1tgunme596lrlkvf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAH_L0dv_PwWGoqT-t-TXtwIY0ujkj_b3Q"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
