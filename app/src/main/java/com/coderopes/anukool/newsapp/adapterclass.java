@@ -29,7 +29,7 @@ import static com.coderopes.anukool.newsapp.MainActivity.t1;
 public class adapterclass extends RecyclerView.Adapter<adapterclass.pviewholder> {
 
 public String[] data,data2,data3,data4;
-    String tittle,description,link;
+    String tittle,description,link,a;
 
     public TextToSpeech textToSpeech;
 //data is used to represent tittle
