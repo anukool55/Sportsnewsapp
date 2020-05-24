@@ -1,4 +1,4 @@
-package com.example.anukool.newsapp;
+package com.coderopes.anukool.newsapp;
 
 import org.junit.Test;
 

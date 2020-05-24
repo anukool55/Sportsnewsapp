@@ -1,8 +1,9 @@
-package com.example.anukool.newsapp;
+package com.coderopes.anukool.newsapp;
 
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,13 +25,18 @@ public class jsonbackground extends AsyncTask<Void,Void,Void> {
 
 public String[] tittle;
 public String[] decription;
+public String[] link;
+public adapterclass adpt;
+public String newslink="https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=5677a23adeef4382bdae1591aa099165";
+
     public String[] img;
 JSONArray ja;
 Context context;
 
-    jsonbackground(Context context)
+    jsonbackground(Context context,String catogry)
     {
         this.context=context;
+        newslink=catogry;
     }
 
 
@@ -38,7 +44,7 @@ Context context;
     protected Void doInBackground(Void... voids) {
         try {
 
-            baseurl=new URL("https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=5677a23adeef4382bdae1591aa099165");
+            baseurl=new URL(newslink);
             //opening connection with url
             HttpsURLConnection connection=(HttpsURLConnection)baseurl.openConnection();
             //setting up input stream
@@ -78,6 +84,27 @@ tittle[i]=text;
                 decription[i]=text;
 
             }
+
+
+      //link of source
+
+          link=new String[ja.length()];
+            for(int i=0;i<ja.length();i++)
+            {
+
+
+                JSONObject o=ja.getJSONObject(i);
+                text=o.getString("url");
+
+               link[i]=text;
+
+            }
+
+
+
+
+
+
             //this is used for url of the image
             img=new String[ja.length()];
             for(int i=0;i<ja.length();i++)
@@ -111,9 +138,11 @@ tittle[i]=text;
 
 
 //calling the constructer of adapter class
-        MainActivity.r1.setAdapter(new adapterclass(tittle, decription,img,context));
 
+        adpt=new adapterclass(tittle, decription,img,link,context);
+        MainActivity.r1.setAdapter(adpt);
 
+MainActivity.pb1.setVisibility(View.GONE);
 
     }
 }
